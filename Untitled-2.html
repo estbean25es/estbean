@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generador de Frases</title>
+	<style>
+		#btn-generar {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Generador de Frases</h1>
+	<button id="btn-generar" onclick="generarFrase()">Esteban</button>
+	<p id="frase-generada"></p>
+	<script>
+		function generarFrase() {
+			var frases = ["La vida es bella", "Nunca te rindas", "El éxito es la suma de pequeños esfuerzos", "La felicidad es una decisión", "El conocimiento es poder"];
+			var index = Math.floor(Math.random() * frases.length);
+			var fraseGenerada = frases[index];
+			document.getElementById("frase-generada").innerHTML = fraseGenerada;
+			var btn = document.getElementById("btn-generar");
+			var top = Math.floor(Math.random() * (window.innerHeight - btn.offsetHeight));
+			var left = Math.floor(Math.random() * (window.innerWidth - btn.offsetWidth));
+			btn.style.top = top + "px";
+			btn.style.left = left + "px";
+		}
+	</script>
+</body>
+</html>
